@@ -61,7 +61,7 @@ module EthernetInterface extends InterfaceEntry like IEthernetInterface
         mac: <default(csmacdSupport ? "EtherMac" : "EtherMacFullDuplex")> like IEtherMac {
             parameters:
                 queueModule = (exists(queue) ? "^.queue" : "");
-                txQueueLimit = (exists(queue) ? 1 : 10000); // queue sends one packet at a time
+                txQueueLimit = (exists(queue) ? 1 : 10000000); // queue sends one packet at a time
                 @display("p=250,500");
         }
         encap: <default("EtherEncap")> like IEtherEncap {
